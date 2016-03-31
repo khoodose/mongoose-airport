@@ -39,11 +39,11 @@ var airport1 = new Airport({
   opened: new Date("October 13, 1990 11:13:00")
 });
 
-airport1.terminals.push ({
+airport1.terminals.push (new Terminal({
   name: "Terminal1",
   flights: [flight1, flight2],
   capacity: 234324
-});
+}));
 
 airport1.save();
 console.log(airport1);
