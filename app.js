@@ -10,8 +10,12 @@ const Airport     = require('./models/airport');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-mongoose.connect('mongodb://localhost/mongoose-airport');
-// var parent = new Parent( {family_name: "Smith", children: [{given_name: 'Matt'}, {given_name: 'Sarah'}]});
+// need to change when connecting to Heroku etc.
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost/mongoose-airport';
+mongoose.connect(mongoUri);
+
+// process envt port or 3000
+app.listen(process.env.PORT || 3000);
 
 var flight1 = new Flight({
   from: "CDG France",
