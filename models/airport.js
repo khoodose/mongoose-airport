@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const Terminal = require('./terminal').Terminal;
+// const Terminal = require('./terminal').Terminal;
 
-// const Terminal = mongoose.model('Terminal');
+const Terminal = mongoose.model('Terminal');
 
 const AirportSchema = new mongoose.Schema({
   name: String,
